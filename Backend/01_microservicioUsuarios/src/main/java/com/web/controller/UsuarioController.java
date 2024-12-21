@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin("*")
+@RestController
 public class UsuarioController {
 
     @Autowired
@@ -20,7 +22,7 @@ public class UsuarioController {
         if(usuario != null){
             return ResponseEntity.ok(usuario);
         }else{
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
