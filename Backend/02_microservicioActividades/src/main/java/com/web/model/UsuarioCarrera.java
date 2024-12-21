@@ -1,14 +1,13 @@
 package com.web.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "usuario_carrera")
 public class UsuarioCarrera {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCarrerra;
     private Integer idUsuarioActividad;
     private Integer posicionGeneral;
