@@ -1,6 +1,6 @@
 package com.web.service;
 
-import com.web.model.Actividad;
+
 import com.web.model.UsuarioActividad;
 
 import java.util.List;

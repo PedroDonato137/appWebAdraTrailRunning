@@ -12,6 +12,7 @@ public class Actividad {
     private Integer idActividad;
     private String nombre;
     private String descripcion;
+    private Integer idProvincia;
     private Integer kilometros;
     private Integer desnivel;
     private String dificultad;
@@ -19,10 +20,11 @@ public class Actividad {
     private String urlWiki;
 
     // Constructor
-    public Actividad(Integer idActividad, String nombre, String descripcion, Integer kilometros, Integer desnivel, String dificultad, String tipo, String urlWiki) {
+    public Actividad(Integer idActividad, String nombre, String descripcion,Integer idProvincia, Integer kilometros, Integer desnivel, String dificultad, String tipo, String urlWiki) {
         this.idActividad = idActividad;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.idProvincia = idProvincia;
         this.kilometros = kilometros;
         this.desnivel = desnivel;
         this.dificultad = dificultad;
@@ -57,6 +59,13 @@ public class Actividad {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Integer getIdProvincia() {
+        return idProvincia;
+    }
+    public void setIdProvincia(Integer idProvincia) {
+        this.idProvincia = idProvincia;
     }
 
     public Integer getKilometros() {

@@ -3,6 +3,7 @@ package com.web.controller;
 
 import com.web.model.Actividad;
 import com.web.model.UsuarioActividad;
+import com.web.service.ActividadService;
 import com.web.service.UsuarioActividadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,16 @@ public class UsuarioActividadController {
     @Autowired
     UsuarioActividadService usuarioActividadService;
 
+    @Autowired
+    ActividadService actividadService;
+
     @GetMapping(value = "/listado", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<UsuarioActividad>> listarActividadesUsuario (@RequestParam("idUsuario") Integer idUsuario){
         return new ResponseEntity<>(usuarioActividadService.listarActividadesUsuario(idUsuario), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/actividad", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Actividad> listarActividades (@RequestParam("idActividad") Integer idActividad){
+        return new ResponseEntity<>(actividadService.listarActividades(idActividad), HttpStatus.OK);
     }
 }
