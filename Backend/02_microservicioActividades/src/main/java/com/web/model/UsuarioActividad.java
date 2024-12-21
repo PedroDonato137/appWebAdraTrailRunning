@@ -1,25 +1,21 @@
 package com.web.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-import java.time.LocalDate;
-import java.util.List;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "usuario_actividad")
 public class UsuarioActividad {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuarioActividad;
     private Integer idUsuario;
     private Integer idActividad;
-    private LocalDate fecha;
+    private Integer fecha;
     private String urlStrava;
 
     // Constructor
-    public UsuarioActividad(Integer idUsuarioActividad, Integer idUsuario, Integer idActividad, LocalDate fecha, String urlStrava) {
+    public UsuarioActividad(Integer idUsuarioActividad, Integer idUsuario, Integer idActividad, Integer fecha, String urlStrava) {
         this.idUsuarioActividad = idUsuarioActividad;
         this.idUsuario = idUsuario;
         this.idActividad = idActividad;
@@ -56,11 +52,11 @@ public class UsuarioActividad {
         this.idActividad = idActividad;
     }
 
-    public LocalDate getFecha() {
+    public Integer getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(Integer fecha) {
         this.fecha = fecha;
     }
 

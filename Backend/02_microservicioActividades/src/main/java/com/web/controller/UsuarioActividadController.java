@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +31,15 @@ public class UsuarioActividadController {
     @GetMapping(value = "/actividad", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Actividad> listarActividades (@RequestParam("idActividad") Integer idActividad){
         return new ResponseEntity<>(actividadService.listarActividades(idActividad), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/actividadUsuario", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> guardarActividadUsuario(@RequestParam("idUsuario") Integer idUsuario, @RequestParam("idActividad") Integer idActividad, @RequestParam("urlStrava") String urlStrava){
+        UsuarioActividad usuarioActividad = usuarioActividadService.guardarActividadUsuario(idUsuario, idActividad, urlStrava);
+        if(usuarioActividad != null){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.SERVICE_UNAVAILABLE);
+        }
     }
 }
