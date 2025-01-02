@@ -1,0 +1,31 @@
+<div id="login">
+  <div class="container">
+      <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+              <div id="login-box" class="col-md-12">
+                <div class="logo-container">
+                  <img src="logo-adra-trail.png" alt="Logo Adra Trail Running" class="logo" />
+                  <h1 class="welcome-message">Pasaporte de Retos</h1>
+                </div>
+                  <form id="login-form" class="form" action="" method="post">
+                      <div class="form-group">
+                          <label class="text-info">Correo:</label><br>
+                          <input type="text" name="correo" [(ngModel)]="correo"  class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label class="text-info">Password:</label><br>
+                          <input type="password" [(ngModel)]="password" name="password" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <br>
+                          <input type="button" (click)="login();" routerLink="/portada" class="btn btn-info btn-md" value="Entrar"><br>
+                      </div>
+                      <!-- <div id="register-link" class="text-right">
+                        <a class="text-info" routerLink="/registrar">Registrese aquí</a>
+                      </div> -->
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

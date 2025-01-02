@@ -22,7 +22,8 @@ public class UsuarioController {
         if(usuario != null){
             return ResponseEntity.ok(usuario);
         }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.ok(usuario); // Devuelvo el usuario, porque sino el front me falla y me da el conflicto solamente
+            //return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Mensaje correcto
         }
     }
 

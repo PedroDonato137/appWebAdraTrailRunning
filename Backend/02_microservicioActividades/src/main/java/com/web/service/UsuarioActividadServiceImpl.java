@@ -1,7 +1,6 @@
 package com.web.service;
 
 import com.web.model.UsuarioActividad;
-import com.web.model.UsuarioCarrera;
 import com.web.repository.UsuarioActividadRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
